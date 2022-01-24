@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js'
 
 // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
-// import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-analytics.js'
+import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-analytics.js'
 
 // Add Firebase products that you want to use
 import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-auth.js'
@@ -25,7 +25,7 @@ measurementId: "G-NRQPV42E2P"
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+const analytics = getAnalytics(app);
 //init services
 const database = getFirestore()
 const auth = getAuth(app)
@@ -39,9 +39,6 @@ const auth = getAuth(app)
   function authenticate(){
     const email = document.getElementById("inputEmail").value
     const password = document.getElementById("inputPassword").value
-    console.log(email)
-    console.log(password)
-    console.log("hi")
 
     signInWithEmailAndPassword(auth, email, password) 
         .then((userCredential) => {
