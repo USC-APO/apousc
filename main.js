@@ -29,20 +29,14 @@ const app = initializeApp(firebaseConfig);
 //init services
 const database = getFirestore()
 const auth = getAuth(app)
-//collection ref
-// const colRef = collection(database, 'users')
 
 
   document.getElementById("signin").addEventListener("click", function(e){
-      e.preventDefault()
+      e.preventDefault() //Prevent Default Form Submission Behavior
       authenticate()
   });
-  //Prevent Default Form Submission Behavior
-  // e.preventDefault()
-  // console.log("clicked")
 
   function authenticate(){
-    // e.preventDefault();
     const email = document.getElementById("inputEmail").value
     const password = document.getElementById("inputPassword").value
     console.log(email)
