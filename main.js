@@ -5,7 +5,9 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-
 
 // Add Firebase products that you want to use
 import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-auth.js'
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore.js'
+import { 
+    collection, addDoc, setDoc, getDoc, updateDoc, deleteDoc, deleteField, getFirestore 
+} from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore.js'
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -31,12 +33,15 @@ const database = getFirestore()
 const auth = getAuth(app)
 
 
-  document.getElementById("signin").addEventListener("click", function(e){
-      e.preventDefault() //Prevent Default Form Submission Behavior
-      authenticate()
-  });
+var signinBtn = document.getElementById("signin");
+if(signinBtn){
+        signinBtn. addEventListener("click", function(e){
+        e.preventDefault() //Prevent Default Form Submission Behavior
+        authenticate()
+    });
+}
 
-  function authenticate(){
+function authenticate(){
     const email = document.getElementById("inputEmail").value
     const password = document.getElementById("inputPassword").value
 
@@ -55,3 +60,32 @@ const auth = getAuth(app)
             alert( errorMessage)
         });
 }
+
+async function addEvent(){ //with auto-id
+    var eventName = document.getElementById("event-name").value
+    var eventLoc = document.getElementById("event-location").value
+    console.log(eventName)
+
+    var ref = collection(database,'events');
+    var docRef = await addDoc(ref, {
+            Name: eventName,
+            Location: eventLoc
+        }
+    )
+    .then(()=>{
+        alert("data added successfully");
+    })
+    .catch((error)=>{
+        alert("unsuccessful");
+    });
+
+}
+
+var eventBtn = document.getElementById("submit-event");
+if(eventBtn){
+    eventBtn.addEventListener("click", function(e){
+        e.preventDefault() //Prevent Default Form Submission Behavior
+        addEvent()
+    });
+}
+
