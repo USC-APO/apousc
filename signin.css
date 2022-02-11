@@ -37,3 +37,12 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.error-message{
+  text-align: center;
+  color: red;
+}
+
+.hide{
+  display:none;
+}
