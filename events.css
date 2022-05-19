@@ -1,7 +1,140 @@
+body{
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Raleway', sans-serif;
+    background-color: #E5E5E5;
+}
+
+/* navbar */
+.apo-navbar{
+    width: 100%;
+}
+
+.logo{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C51010;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color:#cf5858;
+    color: white;
+}
+
+/* form */
 .success-message{
     display: none;
 }
   
 .fail-message{
     display: none;
+}
+
+.middle{
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 50px;
+    width: 60%;
+    /* min-height: 200vh; */
+    background-color: white;
+}
+
+.content{
+    width: 100%;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.header{
+    border-radius: 20px;
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.header-image{
+    /* margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto; */
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.search-bar{
+    width:70%;
+    margin:10px;
+    margin-left: 0px;
+    position: relative;
+    float: left;
+}
+
+.search-btn{
+    width:1%;
+    margin:10px;
+    position: relative;
+    float: left;
+}
+
+.events{
+    margin-top: 20px;
+}
+
+.events-title{
+    background-color: #5D5D5D; 
+    color:white;
+    padding:10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}
+
+.even-row{
+    background-color: white; 
+    padding:10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}
+
+.odd-row{
+    background-color: #E2E2E2; 
+    padding:10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}
+
+.type-tag{
+    color: white; 
+    text-align: center; 
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right:10px;
+    margin-left:10px;
 }

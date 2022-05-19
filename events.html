@@ -3,41 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <title>APO Events</title>
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="events.css" rel="stylesheet">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="home.html"><img src="images/apo_logo.png" width = "75"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="home.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="events.html">Events</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Important Links</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Master-Doc</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="signin.html">Sign-Out</a>
-              </li>
-            </ul>
+    <!-- navbar -->
+    <div class="apo-navbar">
+      <ul>
+        <li class="logo" style="padding-left:50px;">Alpha Phi Omega @ USC</li>
+        <li style="float:right;"><a href="#"><i class="fa-solid fa-circle-user"></i>  Log Out</a></li>
+        <li style="float:right;"><a href="#">Profile</a></li>
+        <li style="float:right;"><a href="#">Eboard Tools</a></li>
+        <li style="float:right;"><a href="events.html">Events</a></li>
+        <li style="float:right;"><a href="home.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="middle">
+      <div class="header">
+        <img class="header-image" src="images/foodNotBomb.jpeg"/>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <h1>Event Listing</h1>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <form>
+              <div class="search-bar">
+                <input type="text" name="" class="form-control" id="search-id" placeholder="Search...">
+              </div>
+              <div class="search-btn">
+                <button type="submit" id="search-btn" class="btn btn-outline-dark">Search</button>
+              </div>  
+            </form>
           </div>
         </div>
-      </nav>
+  
+        View: 
+        <button type="button" id="all-upcoming" class="btn btn-outline-dark btn-sm">All Upcoming</button>
+        <button type="button" id="all-upcoming" class="btn btn-outline-dark btn-sm">Entire Semester</button>  
 
-    <form id ="add-event">
+        <div class="events" style="text-align: center;">
+          <div class="row events-title">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <span class="col">Event</span>
+            <span class="col" style="text-align: center;">Type</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">Lead?</span>
+          </div>
+          <div class="row odd-row">
+            <span class="col-1"><i class="fa-solid fa-circle-check fa-2x" style="color:#60BB36; padding-left: 10px;"></i></span>
+            <a href="events-page.html" class="col" style="color:black;">HFC</a>
+            <span class="col type-tag" style="background-color: #5972F8;">Service</span>
+            <span class="col">May 25, 7pm</span>
+            <span class="col-2">1/5</span>
+            <span class="col" style="padding-right: 10px;">None</span>
+          </div>
+          <div class="row even-row">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <a href="events-page.html" class="col" style="color:black;">Event</a>
+            <span class="col type-tag" style="background-color:#EA6EF4;">Philanthropy</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">None</span>
+          </div>
+          <div class="row odd-row">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <a href="events-page.html" class="col" style="color:black;">Event</a>
+            <span class="col type-tag" style="background-color:#60BB36;">Fellowship</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">Yes</span>
+          </div>
+          <div class="row even-row">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <a href="events-page.html" class="col" style="color:black;">Event</a>
+            <span class="col type-tag" style="background-color: #B854F4;">Membership</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">Lead?</span>
+          </div>
+          <div class="row odd-row">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <a href="events-page.html" class="col" style="color:black;">Event</a>
+            <span class="col type-tag" style="background-color: #FF1C1C;">Special</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">Lead?</span>
+          </div>
+          <div class="row even-row">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <a href="events-page.html" class="col" style="color:black;">Event</a>
+            <span class="col type-tag" style="background-color: #FFA41C;">Fundraising</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">Lead?</span>
+          </div>
+          <div class="row odd-row">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <a href="events-page.html" class="col" style="color:black;">Event</a>
+            <span class="col type-tag" style="background-color: #29DAE5;">Interchapter</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">Lead?</span>
+          </div>
+          <div class="row even-row">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <a href="events-page.html" class="col" style="color:black;">Event</a>
+            <span class="col type-tag" style="background-color: #29DAE5;">Interchapter</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">Lead?</span>
+          </div>
+          <div class="row odd-row">
+            <span class="col-1" style="visibility: hidden;">Check</span>
+            <a href="events-page.html" class="col" style="color:black;">Event</a>
+            <span class="col type-tag" style="background-color: #29DAE5;">Interchapter</span>
+            <span class="col">Date/Time</span>
+            <span class="col-2">Capacity</span>
+            <span class="col" style="padding-right: 10px;">Lead?</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- <form id ="add-event">
         <input id = "event-name">
         <label>Event Name</label>
         <input id = "event-location">
@@ -46,8 +148,12 @@
         <p class="success-message">Event add successfully.</p>
         <p class="fail-message">Failed to add event.</p>
 
-    </form>
+    </form> -->
 
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/85bd4779e1.js" crossorigin="anonymous"></script>  
     <script type ="module" src="main.js"></script>
 </body>
 </html>
